@@ -1,4 +1,52 @@
 
-li a {
-    color:green;
+.container{
+    width:100%;
+    margin-top:-10px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+.content{
+    width:100%;
+}
+.content a, h1{
+    text-align: center;
+    text-decoration: none;
+}
+
+.content a:hover{
+    color: white;
+}
+
+.content a:visited{
+    color:blue;
+}
+
+
+.header{
+    width:100%;
+    margin:0px;
+}
+.header img {
+    width:100%;
+    height:auto;
+}
+
+.create{
+    margin-top: 30px;
+    text-align: center;
+}
+
+@media screen and (min-width: 426px){
+    .create{
+        text-align: right;
+    }
+}
+
+
+@media screen and (min-width: 769px){
+    .container{
+        width:769px;
+    }
 }
