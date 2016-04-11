@@ -1,20 +1,36 @@
+{% extends "polls/base.html" %}
+{% load staticfiles %}
+
+{% block title %}Polls/{{question.question_text}} {% endblock %}
 
 
-{% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+{% block header %}
+    <h1>Create a new poll</h1>
+{% endblock %}
+{%block container %}
+
+    {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
 
 
-<form action="{% url 'polls:createPoll' %}" method="post">
+    <form action="{% url 'polls:createPoll' %}" method="post" id="createPoll">
 
-    {% csrf_token %}
+        {% csrf_token %}
 
 
-    Write your question:<br>
-    <input type="text" name="question"><br>
+        Write your question:<br>
+        <input type="text" name="question"><br>
 
-    Write your choices:
-    <br><input type="text" name="choice">
-    <br><input type="text" name="choice">
-    <br><input type="text" name="choice"><br>
-    <input type="text">
-    <br><input type="submit" value="Publish" />
-</form>
+        Write your answers:
+        <br><input type="text" name="choice">
+        <br><input type="text" name="choice">
+        <br><input type="text" name="choice">
+        <br><input type="text" name="choice">
+    </form>
+{% endblock %}
+{% block rAction %}
+    <button class="actionButton rbutton" type="submit" form="createPoll">
+        <div class="">
+            Publish
+        </div>
+    </button>
+{% endblock %}

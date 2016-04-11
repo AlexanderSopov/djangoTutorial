@@ -11,16 +11,29 @@
     </head>
     <body>
         <div class="container">
-
             <div class="header"><img src="{% static 'polls/images/background.png' %}">
-                {% block header %}
+                <div class="headerh1">
+                    {% block header %}
 
-                {% endblock %}
+                    {% endblock %}
+                </div>
             </div>
 
             {% block container %}
 
             {% endblock %}
+            <div class="actionButtonCont">
+                {% block lAction %}
+                    <a class="actionButton lbutton" href="{% url 'polls:index' %}">
+                        <div>
+                            Back to Polls
+                        </div>
+                    </a>
+                {% endblock %}
+                {% block rAction %}
+                {% endblock %}
+
+            </div>
         </div>
     </body>
 

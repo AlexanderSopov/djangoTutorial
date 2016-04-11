@@ -1,10 +1,25 @@
-<h1>{{ question.question_text}}</h1>
+{% extends "polls/base.html" %}
+{% load staticfiles %}
 
-<ul>
+{% block title %}Polls/{{question.question_text}} {% endblock %}
+
+
+{% block header %}
+    <h1>{{ question.question_text}} - results</h1>
+{% endblock %}
+{%block container %}
+
+
+
 {% for choice in question.choice_set.all %}
-    <li>{{ choice.choice_text }} -- {{ choice.votes }} vote{{ choice.votes|pluralize }}</li>
+    <p>{{ choice.choice_text }} -- {{ choice.votes }} vote{{ choice.votes|pluralize }}</p>
 {% endfor %}
 
-</ul>
 
-<a href="{% url 'polls:detail' question.id %}">Vote again?</a>
+{% endblock %}
+
+{% block rAction %}
+    <a class="actionButton rbutton" href="{% url 'polls:detail' question.id %}">
+        Vote again?
+    </a>
+{% endblock %}

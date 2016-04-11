@@ -25,22 +25,80 @@
 
 
 .header{
+    position: relative;
     width:100%;
     margin:0px;
+    height:auto;
+    max-height:200px;
+    overflow:hidden;
+}
+
+.headerh1{
+    position:absolute;
+    left: 0;
+    top: 50%;
+    width: 100%;
+    text-align: center;
+    color:white;
+    text-shadow:-1px 0 black, 0 1px black, 1px 0 black, 0-1px black;
+}
+.headerh1 h1 {
+    margin:0px;
+    padding:0px;
 }
 .header img {
     width:100%;
     height:auto;
 }
 
-.create{
-    margin-top: 30px;
+.actionButtonCont{
+    display: flex;
+    flex-wrap: wrap;
+    margin-top:20px;
+    padding-top:0px;
+    border-top: 1px solid black;
+}
+.actionButton{
+    background-color: white;
+    border: none;
+    cursor:pointer;
     text-align: center;
+    width:100%;
+    padding-top:8px;
+    padding-bottom:8px;
+    text-decoration: none;
+    color:black;
 }
 
+.actionButton:hover{
+    background-color: grey;
+}
+
+.lbutton{
+    order:2;
+}
+.rbutton{
+    order:1;
+}
+
+
+@media screen and (min-width: 321px){
+
+}
+
+
 @media screen and (min-width: 426px){
-    .create{
-        text-align: right;
+    .headerh1{
+        top: 45%;
+    }
+    .actionButton{
+        width:50%;
+    }
+    .lbutton{
+        order:1;
+    }
+    .rbutton{
+        order:2;
     }
 }
 
@@ -48,5 +106,8 @@
 @media screen and (min-width: 769px){
     .container{
         width:769px;
+    }
+    .headerh1{
+        top: 45%;
     }
 }
